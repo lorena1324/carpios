@@ -1,0 +1,110 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+/* HERO */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    background: url("/carpiosweb.png") center/cover no-repeat;
+    color: white;
+}
+
+/* OVERLAY */
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        #0b4f8a 0%,
+        rgba(11,79,138,0.6) 40%,
+        rgba(0,0,0,0.15) 100%
+    );
+}
+
+/* LOGO */
+.logo {
+    position: absolute;
+    top: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 260px;
+    z-index: 2;
+}
+
+/* CONTENIDO CENTRAL */
+.content {
+    position: relative;
+    z-index: 2;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.content h2 {
+    font-size: 22px;
+    font-weight: 300;
+    margin-bottom: 35px;
+}
+
+/* BOTONES */
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    justify-content: center;
+}
+
+.buttons a {
+    padding: 10px 22px;
+    border: 1px solid white;
+    border-radius: 25px;
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    transition: background 0.3s, color 0.3s, border 0.3s;
+}
+
+/* HOVER */
+.buttons a:hover {
+    background: white;
+    color: #0b4f8a;
+}
+
+/* ACTIVO */
+.buttons a.active {
+    background: #0b4f8a;
+    color: white;
+    border-color: #0b4f8a;
+}
+
+/* EMAIL */
+.email {
+    margin-top: 35px;
+    font-size: 14px;
+    color: #0b4f8a;
+    background: rgba(255,255,255,0.85);
+    padding: 6px 14px;
+    border-radius: 20px;
+}
+
+/* FOOTER */
+footer {
+    position: absolute;
+    bottom: 15px;
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    z-index: 2;
+}

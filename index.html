@@ -1,171 +1,40 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Carpios — Investment Group</title>
-  <style>
-    :root{
-      --accent:#52c7d9;
-      --muted:#e8ffff;
-      --bg:#ffffff;
-      --text:#111111;
-      font-family:'Helvetica Neue', Arial, sans-serif;
-    }
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{
-      background:var(--bg);
-      color:var(--text);
-      display:flex;
-      justify-content:center;
-      padding:2rem;
-    }
-
-    .card{
-      width:100%;
-      max-width:980px;
-      text-align:center;
-      padding:3rem 2rem;
-      border-radius:18px;
-      background:#ffffff;
-      box-shadow:0 8px 20px rgba(0,0,0,0.04);
-      position:relative;
-    }
-
-    @keyframes fade{from{opacity:0;transform:translateY(20px);} to{opacity:1;transform:translateY(0);}}
-
-    /* Logo mucho más grande y elegante */
-    .logo{
-      max-height:460px;
-      width:auto;
-      margin-bottom:1.5rem;
-      padding:10px;
-      border-radius:22px;
-      background:#ffffff;
-      box-shadow:0 0 38px rgba(82,199,217,0.35);
-      border:4px solid rgba(82,199,217,0.35);
-      transition:0.3s ease;
-    }
-    .logo:hover{
-      transform:scale(1.03);
-      box-shadow:0 0 55px rgba(82,199,217,0.55);
-      border-color:rgba(82,199,217,0.55);
-    }
-    .logo:hover{
-      transform:scale(1.02);
-      box-shadow:0 28px 60px rgba(0,0,0,0.10), 0 0 48px rgba(76,195,212,0.45);
-      border-color:rgba(76,195,212,0.5);
-    }
-
-    h1{display:none;}
-
-    .lead{
-      margin:0 auto 2rem auto;
-      max-width:750px;
-      font-size:1.15rem;
-      color:#49606a;
-      line-height:1.6;
-    }
-
-    .fields{
-      display:flex;
-      gap:0.8rem;
-      justify-content:center;
-      flex-wrap:wrap;
-      margin-bottom:2rem;
-    }
-
-    .chip{
-      background:var(--muted);
-      padding:0.7rem 1.2rem;
-      border-radius:999px;
-      font-weight:600;
-      font-size:0.95rem;
-      color:var(--text);
-      transition:0.25s ease;
-    }
-    .chip:hover{
-      background:var(--accent);
-      color:white;
-      transform:translateY(-4px);
-      box-shadow:0 6px 14px rgba(76,195,212,0.35);
-    }
-
-    .contact{
-      margin-bottom:2.3rem;
-    }
-
-    .contact a{
-      font-size:1.15rem;
-      font-weight:700;
-      color:var(--accent);
-      text-decoration:none;
-      transition:0.25s;
-    }
-
-    .contact a:hover{
-      color:var(--accent-dark);
-      text-decoration:underline;
-    }
-
-    .hero-img{
-      margin-top:1.6rem;
-      max-width:100%;
-      height:auto;
-      border-radius:18px;
-      box-shadow:0 0 25px rgba(82,199,217,0.55), 0 0 45px rgba(82,199,217,0.35);
-      border:3px solid rgba(82,199,217,0.45);
-      transition:0.4s ease;
-    }
-    .hero-img:hover{
-      transform:scale(1.03);
-      box-shadow:0 0 35px rgba(82,199,217,0.7), 0 0 60px rgba(82,199,217,0.5);
-      border-color:rgba(82,199,217,0.75);
-    }
-
-    footer{
-      font-size:0.9rem;
-      color:#6e7d85;
-    }
-
-    @media(max-width:540px){
-      .card{padding:2.2rem 1.4rem}
-      .logo{max-height:230px;}
-      .lead{font-size:1.05rem;}
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>Carpios</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="wrap">
-    <main class="card">
 
-    <style>
-      @keyframes fade{
-        from{opacity:0;transform:translateY(20px);} to{opacity:1;transform:translateY(0);}
-      }
-    </style>
-      <!-- LOGO: reemplaza el nombre del archivo por el logo que tienes subido -->
-      <img class="logo" src="/carpioslogo.jpg" alt="Carpios logo" />
+<section class="hero">
 
-      <h1>Carpios</h1>
-      <p class="lead">Investment group exposed in Bioplastics, Art, Real state, Trade Finance, Chemicals & Glass</p>
+    <div class="overlay"></div>
 
-      <div class="fields">
-        <div class="chip">Bioplastics</div>
-        <div class="chip">Art</div>
-        <div class="chip">Real Estate</div>
-        <div class="chip">Trade Finance</div>
-        <div class="chip">Chemicals &amp; Glass</div>
-      </div>
+    <!-- LOGO -->
+    <img src="/carpioslogo.png" class="logo" alt="Carpios">
 
-      <div class="contact"><a href="mailto:contact@carpios.com" style="color:var(--accent);font-weight:700;text-decoration:none;">contact@carpios.com</a></div>
+    <!-- CONTENIDO -->
+    <div class="content">
+        <h2>Investment group operating across key sectors</h2>
 
-      <!-- IMAGEN: sustituye el archivo "great-falls.jpg" por la foto que quieras (ej. Great Falls) -->
-      <img class="hero-img" src="/falls.jpeg" alt="Great Falls (sustituir por imagen real)"/>
+        <div class="buttons">
+            <a href="#">BIOPLASTICS</a>
+            <a href="#">ART</a>
+            <a href="#">REAL ESTATE</a>
+            <a href="#">TRADE FINANCE</a>
+            <a href="#">CHEMICALS</a>
+            <a href="#">GLASS</a>
+        </div>
 
-      <footer>2025 © All Rights Reserved / Created by Tolumar</footer>
-    </main>
-  </div>
+        <p class="email">contact@carpios.com</p>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>© Carpios, All rights reserved</footer>
+
+</section>
+
 </body>
 </html>
- 
