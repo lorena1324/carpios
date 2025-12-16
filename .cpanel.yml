@@ -1,0 +1,30 @@
+---
+deployment:
+  tasks:
+    # Define el DEPLOYPATH - reemplaza con la ruta real de tu public_html
+    # Ejemplo: /home/usuario/public_html/ o /home/usuario/dominio.com/
+    # NOTA: cPanel puede usar una variable de entorno, pero es mejor especificar la ruta completa
+    # Puedes encontrar la ruta exacta en cPanel > File Manager > ubicación actual
+    - export DEPLOYPATH=/home/usuario/public_html/
+
+    # Copiar archivos HTML, CSS y JavaScript
+    - cp index.html $DEPLOYPATH
+    - cp style.css $DEPLOYPATH
+    - cp script.js $DEPLOYPATH
+
+    # Copiar archivos de imagen
+    - cp carpioslogo.png $DEPLOYPATH
+    - cp carpiosweb.png $DEPLOYPATH
+    - cp carpions.gif $DEPLOYPATH
+
+    # Copiar archivo .htaccess (archivo oculto - debe copiarse explícitamente)
+    - cp .htaccess $DEPLOYPATH
+
+    # Asegurar permisos correctos (644 para archivos, 755 para directorios)
+    - chmod 644 $DEPLOYPATH*.html
+    - chmod 644 $DEPLOYPATH*.css
+    - chmod 644 $DEPLOYPATH*.js
+    - chmod 644 $DEPLOYPATH*.png
+    - chmod 644 $DEPLOYPATH*.gif
+    - chmod 644 $DEPLOYPATH.htaccess
+

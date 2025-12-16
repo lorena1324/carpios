@@ -10,7 +10,37 @@ Esta guía te ayudará a desplegar el sitio web Carpios en cPanel de Namecheap.
 
 ## 🚀 Pasos para el Deploy
 
-### Opción 1: Usando File Manager de cPanel (Recomendado)
+### Opción 1: Despliegue Automático con Git (Recomendado para desarrollo continuo)
+
+Esta opción permite despliegues automáticos cada vez que hagas push al repositorio.
+
+1. **Configura el repositorio Git en cPanel**
+   - Accede a cPanel
+   - Busca "Git Version Control" en el menú
+   - Crea un nuevo repositorio o clona uno existente
+   - **IMPORTANTE:** Antes de crear el repositorio, asegúrate de que el archivo `.cpanel.yml` esté en la raíz de tu repositorio
+
+2. **Configura el DEPLOYPATH en `.cpanel.yml`**
+   - Abre el archivo `.cpanel.yml` en tu repositorio
+   - Reemplaza `/home/usuario/public_html/` con la ruta real de tu directorio de despliegue
+   - Para encontrar la ruta exacta:
+     - Ve a File Manager en cPanel
+     - Navega a `public_html` (o tu directorio raíz)
+     - La ruta completa aparecerá en la barra de direcciones
+     - Ejemplo: `/home/tuusuario/public_html/` o `/home/tuusuario/tudominio.com/`
+
+3. **Realiza el primer despliegue**
+   - En cPanel, ve a "Git Version Control" > "Manage Repository"
+   - Haz clic en "Deploy HEAD Commit" en la pestaña "Pull or Deploy"
+   - Esto copiará todos los archivos al directorio de despliegue
+
+4. **Despliegues automáticos**
+   - Cada vez que hagas `git push` al repositorio, cPanel ejecutará automáticamente el despliegue
+   - Esto es gracias al hook `post-receive` que cPanel agrega automáticamente
+
+**Nota:** Si clonaste un repositorio existente, solo podrás hacer despliegues manuales. Para despliegues automáticos, crea el repositorio desde cPanel.
+
+### Opción 2: Usando File Manager de cPanel
 
 1. **Accede a cPanel**
    - Inicia sesión en tu cuenta de Namecheap
@@ -39,7 +69,7 @@ Esta guía te ayudará a desplegar el sitio web Carpios en cPanel de Namecheap.
    - Visita tu dominio en el navegador
    - El sitio debería estar funcionando correctamente
 
-### Opción 2: Usando FTP
+### Opción 3: Usando FTP
 
 1. **Conecta vía FTP**
    - Usa un cliente FTP (FileZilla, WinSCP, etc.)
@@ -87,6 +117,21 @@ public_html/
 └── carpions.gif
 ```
 
+## 📁 Estructura del Repositorio Git
+
+```
+carpios/
+├── .cpanel.yml          # Configuración de despliegue automático
+├── .htaccess            # Configuración de Apache
+├── index.html
+├── style.css
+├── script.js
+├── carpioslogo.png
+├── carpiosweb.png
+├── carpions.gif
+└── README-DEPLOY.md     # Esta guía
+```
+
 ## ✅ Verificación Post-Deploy
 
 Después del deploy, verifica:
@@ -117,6 +162,13 @@ Después del deploy, verifica:
 - Verifica que `.htaccess` esté correctamente formateado
 - Revisa los logs de error en cPanel
 - Asegúrate de que mod_rewrite esté habilitado en el servidor
+
+### Problemas con el despliegue Git
+- Verifica que el `DEPLOYPATH` en `.cpanel.yml` sea correcto
+- Asegúrate de que todos los archivos necesarios estén en el repositorio
+- Revisa los logs de despliegue en cPanel > Git Version Control
+- Verifica que el archivo `.cpanel.yml` esté en la raíz del repositorio
+- Si el despliegue falla, verifica los permisos del directorio de destino
 
 ## 📞 Soporte
 
