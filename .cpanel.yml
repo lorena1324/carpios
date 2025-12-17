@@ -5,7 +5,7 @@ deployment:
     # Ejemplo: /home/usuario/public_html/ o /home/usuario/dominio.com/
     # NOTA: cPanel puede usar una variable de entorno, pero es mejor especificar la ruta completa
     # Puedes encontrar la ruta exacta en cPanel > File Manager > ubicación actual
-    - export DEPLOYPATH=/home/usuario/public_html/
+    - export DEPLOYPATH=/home/carposcb/public_html/
 
     # Copiar archivos HTML, CSS y JavaScript
     - cp index.html $DEPLOYPATH
