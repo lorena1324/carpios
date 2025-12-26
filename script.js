@@ -10,3 +10,8 @@ document.querySelectorAll(".buttons a").forEach(btn => {
     btn.addEventListener('click', e => e.preventDefault());
   });
 
+<script>
+  document.querySelectorAll('.buttons a').forEach(btn => {
+    btn.addEventListener('click', e => e.preventDefault());
+  });
+</script>
