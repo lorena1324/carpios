@@ -1,0 +1,17 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/carposcb/public_html/
+
+    # Seguridad: si algo falla, aborta
+    - set -e
+
+    # Sincronizar TODO el proyecto (excepto git)
+    - rsync -av --delete \
+        --exclude='.git/' \
+        --exclude='.cpanel.yml' \
+        ./ $DEPLOYPATH
+
+    # Permisos correctos
+    - find $DEPLOYPATH -type d -exec chmod 755 {} \;
+    - find $DEPLOYPATH -type f -exec chmod 644 {} \;
