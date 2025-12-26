@@ -1,16 +1,12 @@
 // Ejemplo simple de interacción
-document.querySelectorAll(".buttons a").forEach(btn => {
-    btn.addEventListener("click", e => {
-        e.preventDefault();
-        alert(`Sección: ${btn.textContent}`);
+
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.buttons a').forEach(btn => {
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();            // bloquea navegación
+        e.stopImmediatePropagation();  // corta cualquier otro listener
+        return false;                  // seguridad extra
+      });
     });
-});
-
-  document.querySelectorAll('.buttons a').forEach(btn => {
-    btn.addEventListener('click', e => e.preventDefault());
   });
 
-
-  document.querySelectorAll('.buttons a').forEach(btn => {
-    btn.addEventListener('click', e => e.preventDefault());
-  });
