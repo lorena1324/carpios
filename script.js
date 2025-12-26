@@ -5,3 +5,8 @@ document.querySelectorAll(".buttons a").forEach(btn => {
         alert(`Sección: ${btn.textContent}`);
     });
 });
+
+  document.querySelectorAll('.buttons a').forEach(btn => {
+    btn.addEventListener('click', e => e.preventDefault());
+  });
+

@@ -73,20 +73,29 @@ body {
     color: white;
     text-decoration: none;
     font-size: 13px;
-    transition: background 0.3s, color 0.3s, border 0.3s;
+
+    cursor: default;
+
+    box-shadow: 0 0 6px rgba(255,255,255,0.15);
+
+    transition:
+        background 0.3s,
+        color 0.3s,
+        box-shadow 0.3s,
+        transform 0.3s;
 }
 
-/* HOVER */
+/* HOVER + GLOW */
 .buttons a:hover {
     background: white;
     color: #0b4f8a;
-}
 
-/* ACTIVO */
-.buttons a.active {
-    background: #0b4f8a;
-    color: white;
-    border-color: #0b4f8a;
+    box-shadow:
+        0 0 10px rgba(255,255,255,0.8),
+        0 0 20px rgba(255,255,255,0.6),
+        0 0 35px rgba(11,79,138,0.6);
+
+    transform: translateY(-2px);
 }
 
 /* EMAIL */
