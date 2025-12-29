@@ -3,7 +3,7 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home/carposcb/public_html/
 
-    # Seguridad: si algo falla, aborta
+    # Seguridad: si algo falla, aborta.
     - set -e
 
     # Sincronizar TODO el proyecto (excepto git)
